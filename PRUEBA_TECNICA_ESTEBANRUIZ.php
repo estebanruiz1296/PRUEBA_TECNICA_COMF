@@ -24,11 +24,14 @@
     echo "<br/> array_map pares";
     function arrayMapPares ($value) {
         if($value % 2 == 0){
-            return true;
+            return $value;
         }
-        return false;
+        return null;
     }
-    print_r(array_map("arrayMapPares", $arrayNumbers));
+    $paresMap = array_map("arrayMapPares", $arrayNumbers);
+    print_r(array_filter($paresMap, function($value){
+        return $value != null;
+    }));
 
 
 
