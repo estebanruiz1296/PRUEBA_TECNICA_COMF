@@ -87,4 +87,39 @@
     print_r(array_sum(array_filter($arrayNumbers,"arrayFilterParesSuma")));
 
     
+    //array_reduce
+    echo "<br/><br/> array_reduce pares";
+
+    function arrayReducePares($acc, $value){
+        if($value % 2 == 0){
+            $acc[] = $value;
+        }
+        return $acc;
+    }
+
+    print_r(array_reduce($arrayNumbers, "arrayReducePares", []));
+
+    echo "<br/> array_reduce pares duplicados: ";
+
+    function arrayReduceParesDuplicados($acc, $value){
+        if($value % 2 == 0){
+            $acc[] = $value * 2;
+        }
+        return $acc;
+    }
+
+    print_r(array_reduce($arrayNumbers, "arrayReduceParesDuplicados", []));
+
+
+    echo "<br/> array_reduce pares duplicados: ";
+
+    function arrayReduceParesSuma($acc, $value){
+        if($value % 2 == 0){
+            $acc += $value;
+        }
+        return $acc;
+    }
+
+    print_r(array_reduce($arrayNumbers, "arrayReduceParesSuma", 0));
+
 ?>
