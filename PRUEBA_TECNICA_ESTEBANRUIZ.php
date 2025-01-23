@@ -53,5 +53,35 @@
     }
     print_r(array_map("arrayMapParesSuma", $arrayNumbers));
 
+
+    //array_filter
+    echo "<br/><br/> array_filter pares";
+    function arrayFilterPares($value){
+        if($value % 2 == 0){
+            return $value; 
+        }
+    }
+    print_r(array_filter($arrayNumbers, "arrayFilterPares"));
+
+    echo "<br/> array_filter pares duplicados";
+    function arrayFilterParesDuplicados($value) {
+        if($value % 2 == 0){
+            return $value;
+        }
+    }
+    $filterPares = array_filter($arrayNumbers, "arrayFilterParesDuplicados");
+    print_r(array_map(function($value){
+        return $value * 2;
+    }, $filterPares));
+
+
+    echo "<br/> array_filter pares suma: ";
+    function arrayFilterParesSuma($value) {
+        if($value % 2 == 0){
+            return $value;
+        }
+    }
+    print_r(array_sum(array_filter($arrayNumbers,"arrayFilterParesSuma")));
+
     
 ?>
