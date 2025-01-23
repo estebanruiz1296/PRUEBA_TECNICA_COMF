@@ -15,6 +15,7 @@
         return "La tipo " . $tipo . " no coincide con ninguno de los alojamientos";
     }
 
+    echo buscar("suite");
 
 
     //MANEJO DE ARRAYS
